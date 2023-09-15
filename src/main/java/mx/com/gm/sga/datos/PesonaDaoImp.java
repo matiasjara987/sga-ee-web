@@ -18,7 +18,7 @@ public class PesonaDaoImp implements PersonaDao {
 
     @Override
     public Persona findPersonabyid(Persona persona) {
-        return em.find(Persona.class, persona.getIdPersona());
+        return em.find(Persona.class, persona.getIdpersona());
     }
 
     @Override
