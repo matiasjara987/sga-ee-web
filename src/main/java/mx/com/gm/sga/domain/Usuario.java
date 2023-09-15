@@ -1,10 +1,9 @@
 package mx.com.gm.sga.domain;
 
-import jakarta.persistence.*;
 import java.io.Serializable;
+import javax.persistence.*;
 import javax.validation.constraints.Size;
 
- //@author matia
 @Entity
 @NamedQueries({
     @NamedQuery(name = "Usuario.findAll", query = "SELECT u FROM Usuario u"),
@@ -14,15 +13,19 @@ import javax.validation.constraints.Size;
 public class Usuario implements Serializable {
 
     private static final long serialVersionUID = 1L;
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
     private Integer idUsuario;
+    
     @Size(max = 45)
     private String username;
-    @Size(max = 45) 
+    
+    @Size(max = 45)
     private String password;
-    @JoinColumn(name = "idPersona", referencedColumnName = "Id_persona")
+    
+    @JoinColumn(name = "id_persona", referencedColumnName = "id_persona")
     @ManyToOne
     private Persona persona;
 
@@ -33,6 +36,11 @@ public class Usuario implements Serializable {
         this.idUsuario = idUsuario;
     }
 
+    public Usuario(String username, String password) {
+        this.username = username;
+        this.password = password;
+    }
+    
     public Integer getIdUsuario() {
         return idUsuario;
     }
@@ -90,5 +98,4 @@ public class Usuario implements Serializable {
         return "Usuario{" + "idUsuario=" + idUsuario + ", username=" + username + ", password=" + password + ", persona=" + persona + '}';
     }
 
-    
 }
