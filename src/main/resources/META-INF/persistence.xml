@@ -7,8 +7,10 @@
     <persistence-unit name="PersonaPU" transaction-type="JTA">
         <jta-data-source>jdbc/PersonaDb</jta-data-source>
         
-        <!--
                 <class>mx.com.gm.sga.domain.Persona</class>
+                <class>mx.com.gm.sga.domain.Usuario</class>
+        <!--
+
                 <properties>
                 <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/test?useSSL=false&amp;useTimezone=true&amp;serverTimezone=UTC&amp;allowPublicKeyRetrieval=true" />
                 <property name="javax.persistence.jdbc.user" value="root" />

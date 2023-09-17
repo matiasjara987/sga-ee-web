@@ -1,7 +1,6 @@
 package mx.com.gm.sga.servicio;
 
 
-import java.util.ArrayList;
 import java.util.List;
 import mx.com.gm.sga.domain.Persona;
 import javax.ejb.Stateless;
